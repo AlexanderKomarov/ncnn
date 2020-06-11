@@ -22,6 +22,9 @@ endif()
 
 add_executable(ncnnoptimize ncnnoptimize.cpp)
 target_link_libraries(ncnnoptimize PRIVATE ncnn)
+
+add_executable(ncnnoptimize_incode ncnnoptimize_incode.cpp)
+target_link_libraries(ncnnoptimize_incode PRIVATE ncnn)
 if(NCNN_VULKAN)
     target_link_libraries(ncnnoptimize PRIVATE ${Vulkan_LIBRARY})
 endif()
@@ -29,3 +32,4 @@ endif()
 # add all tools to a virtual project group
 set_property(TARGET ncnn2mem PROPERTY FOLDER "tools")
 set_property(TARGET ncnnoptimize PROPERTY FOLDER "tools")
+set_property(TARGET ncnnoptimize_incode PROPERTY FOLDER "tools")
